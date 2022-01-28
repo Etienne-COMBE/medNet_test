@@ -65,12 +65,12 @@ def calculate_score(data: list):
 
 def create_dataset(random_ = False):
     if not random_:
-        path = os.path.join(os.getcwd(), "resized")
+        path = os.path.join(os.getcwd(), "tests", "img")
         class_dir = os.listdir(path)
         data = []
         for class_ in class_dir:
-            sample = random.sample(os.listdir(os.path.join(path, class_)), 30)
-            for img_path in sample:
+            img_list = os.listdir(os.path.join(path, class_))
+            for img_path in img_list:
                 img = Image.open(os.path.join(path, class_, img_path))
                 data.append([img, class_])
     else:
