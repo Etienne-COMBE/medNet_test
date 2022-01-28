@@ -43,3 +43,8 @@ jobs:
         run: |
           coverage run -m pytest -v tests
           coverage html
+      - name: Archive code coverage results
+        uses: actions/upload-artifact@v2
+        with:
+          name: test-coverage-report
+          path: output/test/code-coverage.html
