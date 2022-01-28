@@ -42,3 +42,4 @@ jobs:
       - name: Launch test
         run: |
           coverage run -m pytest -v tests
+          coverage html
